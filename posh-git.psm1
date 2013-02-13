@@ -35,4 +35,6 @@ Export-ModuleMember `
         'Add-SshKey',
         'Get-SshPath',
         'Update-AllBranches',
+        'Enable-GitShortcuts',
+        'Disable-GitShortcuts',
         'tgit')

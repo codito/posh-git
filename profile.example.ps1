@@ -28,6 +28,8 @@ function global:prompt {
 
 Enable-GitColors
 
+Enable-GitShortcuts
+
 Pop-Location
 
 Start-SshAgent -Quiet
