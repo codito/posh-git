@@ -99,18 +99,22 @@ function script:gitFiles($filter, $files) {
 }
 
 function script:gitIndex($filter) {
+    $GitStatus = Get-GitStatus
     gitFiles $filter $GitStatus.Index
 }
 
 function script:gitAddFiles($filter) {
+    $GitStatus = Get-GitStatus
     gitFiles $filter (@($GitStatus.Working.Unmerged) + @($GitStatus.Working.Modified) + @($GitStatus.Working.Added))
 }
 
 function script:gitCheckoutFiles($filter) {
+    $GitStatus = Get-GitStatus
     gitFiles $filter (@($GitStatus.Working.Unmerged) + @($GitStatus.Working.Modified) + @($GitStatus.Working.Deleted))
 }
 
 function script:gitDiffFiles($filter, $staged) {
+    $GitStatus = Get-GitStatus
     if ($staged) {
         gitFiles $filter $GitStatus.Index.Modified
     } else {
@@ -119,10 +123,12 @@ function script:gitDiffFiles($filter, $staged) {
 }
 
 function script:gitMergeFiles($filter) {
+    $GitStatus = Get-GitStatus
     gitFiles $filter $GitStatus.Working.Unmerged
 }
 
 function script:gitDeleted($filter) {
+    $GitStatus = Get-GitStatus
     gitFiles $filter $GitStatus.Working.Deleted
 }
 
