@@ -36,7 +36,9 @@ FunctionsToExport = @('Invoke-NullCoalescing',
         'Add-SshKey',
         'Get-SshPath',
         'Update-AllBranches',
-        'tgit')
+        'tgit',
+        'Enable-GitShortcuts',
+        'Disable-GitShortcuts')
 
 # Cmdlets to export from this module
 CmdletsToExport = @()
